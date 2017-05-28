@@ -62,7 +62,7 @@ else()
   else()
     set(DEBUG_FLAGS "-g3 -O0")
   endif()
-  set(RELEASE_FLAGS "-Ofast -DNDEBUG -Wno-unused-variable")
+  set(RELEASE_FLAGS "-Ofast -DNDEBUG -Wno-unused-variable -pthread")
   if(NOT APPLE)
     # There is a clang bug that does not allow to compile code that uses AES-NI intrinsics if -flto is enabled
     set(RELEASE_FLAGS "${RELEASE_FLAGS} -flto")
